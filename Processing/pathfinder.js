@@ -1,0 +1,3 @@
+function getPaths(city,map){
+    
+}
