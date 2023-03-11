@@ -20,14 +20,14 @@ Dieppe,Brussles,2,0,0,Green,0
 Paris,Brussles,2,0,0,Yellow,Red
 Amsterdam,Brussles,1,0,0,Black,0
 Brussles,Frankfurt,2,0,0,Blue,0
-Paris ,Frankfurt,3,0,0,White,Orange
-Paris ,Zurich,3,0,1,Grey,0
+Paris,Frankfurt,3,0,0,White,Orange
+Paris,Zurich,3,0,1,Grey,0
 Amsterdam,Frankfurt,2,0,0,White,0
 Amsterdam,Essen,3,0,0,Yellow,0
 Essen,Frankfurt,2,0,0,Green,0
 Frankfurt,Munchen,2,0,0,Purple,0
 Zurich,Marseille,2,0,1,Purple,0
-Marseille,Rome,4,0,1,Grey,0
+Marseille,Roma,4,0,1,Grey,0
 Roma,Venezia,2,0,0,Black,0
 Munchen,Venezia,2,0,1,Blue,0
 Munchen,Zurich,2,0,1,Yellow,0

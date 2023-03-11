@@ -35,37 +35,110 @@ function getData(path,verify){
     let tunnel = element.Tunnel
     let locomotives = element['Required Locomotives']
 
-    if( city1 in map){
-        
-    }
-    else if (city2 in map){
 
+    if(city1 in map && city2 in map){
+      let connection1 = {
+        city:city1,
+        color1:c1,
+        tunnel:tunnel,
+        locomotives:locomotives,
+        distance:distance
+      }
+      let connection2 = {
+        city:city2,
+        color1:c1,
+        tunnel:tunnel,
+        locomotives:locomotives,
+        distance:distance
+      }
+      if(c2 !== '0'){
+        connection1['color2'] = c2;
+        connection2['color2'] = c2   
+       }
+       map[city1].push(connection2)
+       map[city2].push(connection1)
     }
-    else{
+
+    else if( city1 in map){
+      let entry = {
         
+            city:city1,
+            color1:c1,
+            tunnel:tunnel,
+            locomotives:locomotives,
+            distance:distance
+        
+      }
+      if(c2 !== '0'){
+        entry['color2'] = c2   
+       }
+       map[city2] = [entry]
+      entry = {
+        
+        city:city2,
+        color1:c1,
+        tunnel:tunnel,
+        locomotives:locomotives,
+        distance:distance
+    
+      }
+      if(c2 !== '0'){
+        entry['color2'] = c2   
+      }
+      map[city1].push(entry)
+    }
+
+    else if (city2 in map){
+      let entry = {
+            city:city2,
+            color1:c1,
+            tunnel:tunnel,
+            locomotives:locomotives,
+            distance:distance
+      }
+      if(c2 !== '0'){
+        entry['color2'] = c2   
+      }
+      map[city1] = [entry]
+      entry = {
+        city:city1,
+        color1:c1,
+        tunnel:tunnel,
+        locomotives:locomotives,
+        distance:distance
+      }
+      if(c2 !== '0'){
+        entry['color2'] = c2   
+      }
+      map[city2].push(entry)
+      
+    }
+
+    else{
         let entry1 = {
-            connections:{
                 city:city2,
-                color1:color1,
+                color1:c1,
                 tunnel:tunnel,
                 locomotives:locomotives,
-            }
+                distance:distance
+            
         }
         let entry2 = {
-            connections:{
                 city:city2,
-                color1:color1,
+                color1:c1,
                 tunnel:tunnel,
                 locomotives:locomotives,
-            }
+                distance:distance
+            
         }
-        if(color2 !== '0'){
-         entry1.connections['color2'] = color2;
-         entry2.connections['color2'] = color2   
+        if(c2 !== '0'){
+         entry1['color2'] = c2;
+         entry2['color2'] = c2   
         }
-        map[city1] = entry1
-        map[city2] = entry2
+        map[city1] = [entry1]
+        map[city2] = [entry2]
 
         
     }
+    console.log(map)
   });
