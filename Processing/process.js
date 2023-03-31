@@ -22,6 +22,22 @@ function getData(path,verify){
       
     })
   }
+
+function generateSimpleEdgeMap(map){
+  let returnMap = {}
+  Object.keys(map).forEach(cityName=>{
+    let temp = []
+    let city = map[cityName]
+    city.forEach(con=>{
+      let conObj = {}
+      conObj[con.city] = con.distance
+      temp.push(conObj)
+    })
+    returnMap[cityName] = temp
+  })
+  return returnMap
+}
+
   let connections  = await getData(mapDir);
   let map = {}
 
@@ -140,5 +156,5 @@ function getData(path,verify){
 
         
     }
-    console.log(map)
+    console.log(generateSimpleEdgeMap(map))
   });
