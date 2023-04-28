@@ -2,6 +2,7 @@ import fs from 'fs'
 import csv from 'csv-parser'
 
 const mapDir = '../Data/map.csv'
+import getPaths from './pathfinder.js'
 function getData(path,verify){
     
     return new Promise((resolve)=>{
@@ -156,5 +157,7 @@ function generateSimpleEdgeMap(map){
 
         
     }
-    console.log(generateSimpleEdgeMap(map))
+    //console.log(generateSimpleEdgeMap(map))
   });
+  let edgeMap = generateSimpleEdgeMap(map)
+  getPaths('Paris',edgeMap)
