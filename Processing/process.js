@@ -39,7 +39,7 @@ function generateSimpleEdgeMap(map){
   })
   return returnMap
 }
-
+async function generateGameData(){
   let connections  = await getData(mapDir);
   let map = {}
 
@@ -166,5 +166,11 @@ function generateSimpleEdgeMap(map){
     distanceMap[temp]=getPaths(temp,edgeMap)
   })
   console.log(distanceMap['Stockholm'])
-  console.log(await getCardData())
-  
+  let cardData = await getCardData()
+  return {
+    map:map,
+    distanceMap:distanceMap,
+    cardData:cardData
+  }
+}
+export default generateGameData
