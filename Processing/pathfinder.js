@@ -23,17 +23,14 @@ function getPaths(city,map){
         
         unvisited.splice(unvisited.indexOf(currentCity),1)
         
-        console.log(unvisited)
         if(unvisited.length>0){
             currentCity = Object.keys(paths).filter(c=>unvisited.includes(c)).reduce((a, b) => paths[a] < paths[b] ? a : b)
         }
         else{
             break;
         }
-        
     }
-    //paths.sort((cityA,cityB) => cityA-cityB)
-    return paths;
     
+    return paths;  
 }
 export default getPaths

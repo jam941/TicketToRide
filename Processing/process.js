@@ -160,4 +160,9 @@ function generateSimpleEdgeMap(map){
     //console.log(generateSimpleEdgeMap(map))
   });
   let edgeMap = generateSimpleEdgeMap(map)
-  getPaths('Paris',edgeMap)
+  let distanceMap = {}
+  Object.keys(map).forEach(temp=>{
+    distanceMap[temp]=getPaths(temp,edgeMap)
+  })
+  console.log(distanceMap['Stockholm'])
+  
