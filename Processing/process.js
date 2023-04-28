@@ -3,6 +3,7 @@ import csv from 'csv-parser'
 
 const mapDir = '../Data/map.csv'
 import getPaths from './pathfinder.js'
+import getCardData from './analyzeBaseCards.js'
 function getData(path,verify){
     
     return new Promise((resolve)=>{
@@ -165,4 +166,5 @@ function generateSimpleEdgeMap(map){
     distanceMap[temp]=getPaths(temp,edgeMap)
   })
   console.log(distanceMap['Stockholm'])
+  console.log(await getCardData())
   
