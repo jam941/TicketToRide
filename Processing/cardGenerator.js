@@ -66,7 +66,7 @@ async function generateSimpleCards(){
         if(citySpread[goodCity] == 0){
             delete citySpread[goodCity]
         }
-        console.log(count)
+        //console.log(count)
         count+=1;
         if(Object.values(citySpread).length ===0 || count===45){
             break;
